@@ -18,9 +18,12 @@ abstract class AbstractModule implements ModuleInterface
      */
     public function init(ModuleManager $manager): void
     {
+        $reflection = new \ReflectionObject($this);
+        $namespace = $reflection->getNamespaceName();
+
         $eventManager = $manager->getEventManager();
         $sharedEventManager = $eventManager->getSharedManager();
-        $sharedEventManager->attach(__NAMESPACE__, 'dispatch', [$this, 'onDispatch'], 100);
+        $sharedEventManager->attach($namespace, 'dispatch', [$this, 'onDispatch'], 100);
     }
 
     /**
