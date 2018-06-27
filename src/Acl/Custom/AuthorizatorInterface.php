@@ -1,6 +1,6 @@
 <?php
 
-namespace Zend\Db\Acl\Custom;
+namespace Zend\Mvc\Acl\Custom;
 
 use Zend\Http\Request;
 

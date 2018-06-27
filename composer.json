@@ -1,0 +1,25 @@
+{
+    "name": "phphacks/zend-mvc-acl",
+    "require": {
+        "zendframework/zend-mvc": "^3.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Zend\\Mvc\\" : "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\" : "tests"
+        }
+    },
+    "authors": [
+        {
+            "name": "Lucas A. de Araújo",
+            "email": "lucas.araujo@bevicred.com.br"
+        }
+    ]
+}

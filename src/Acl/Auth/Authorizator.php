@@ -59,6 +59,6 @@ class Authorizator
 
         /** @var AuthorizatorInterface $authorizator */
         $authorizator = $this->serviceManager->get(ServiceEnum::AUTHORIZATOR);
-        $authorizator->authorize($request);
+        return $authorizator->authorize($request);
     }
 }
