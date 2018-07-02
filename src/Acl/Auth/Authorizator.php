@@ -49,7 +49,7 @@ class Authorizator
      */
     public function authorize(Request $request): bool
     {
-        if (in_array($request->getUriString(), $this->whitelist)) {
+        if (in_array($request->getUri()->getPath(), $this->whitelist)) {
             return true;
         }
 
