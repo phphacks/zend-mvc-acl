@@ -8,6 +8,7 @@ use Zend\Mvc\Acl\Enum\ServiceEnum;
 use Zend\Mvc\Acl\Exceptions\AuthException;
 use Zend\ServiceManager\ServiceLocatorInterface;
 use Zend\ServiceManager\ServiceManager;
+use Zend\Stdlib\RequestInterface;
 
 /**
  * Authorizator
@@ -43,11 +44,11 @@ class Authorizator
     }
 
     /**
-     * @param Request $request
+     * @param RequestInterface $request
      * @return bool
      * @throws AuthException
      */
-    public function authorize(Request $request): bool
+    public function authorize(RequestInterface $request): bool
     {
         if (in_array($request->getUri()->getPath(), $this->whitelist)) {
             return true;
