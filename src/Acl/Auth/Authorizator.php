@@ -50,6 +50,11 @@ class Authorizator
      */
     public function authorize(RequestInterface $request): bool
     {
+        if ($request instanceof \Zend\Console\Response)
+        {
+            return true;
+        }
+
         if (in_array($request->getUri()->getPath(), $this->whitelist)) {
             return true;
         }
