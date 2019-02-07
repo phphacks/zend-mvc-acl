@@ -50,7 +50,7 @@ class Authorizator
      */
     public function authorize(RequestInterface $request): bool
     {
-        if ($request instanceof \Zend\Console\Response)
+        if ($request instanceof \Zend\Console\Request)
         {
             return true;
         }
